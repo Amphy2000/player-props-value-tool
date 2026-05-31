@@ -24,7 +24,7 @@ export default function PlayerPropsValueTool() {
   const [odds, setOdds] = useState(2.0);
   const [result, setResult] = useState<'Win' | 'Loss'>('Win');
 
-  const logBet = ()n => {
+  const logBet = () => {
     if (!player || !prop) return;
 
     const profit = result === 'Win' 
