@@ -18,14 +18,13 @@ export default function PlayerPropsValueTool() {
   const [totalProfit, setTotalProfit] = useState(0);
   const [winCount, setWinCount] = useState(0);
 
-  // Form states
   const [player, setPlayer] = useState('');
   const [prop, setProp] = useState('');
   const [stake, setStake] = useState(2000);
   const [odds, setOdds] = useState(2.0);
   const [result, setResult] = useState<'Win' | 'Loss'>('Win');
 
-  const logBet = () => {
+  const logBet = ()n => {
     if (!player || !prop) return;
 
     const profit = result === 'Win' 
@@ -52,7 +51,6 @@ export default function PlayerPropsValueTool() {
     const newWins = newBets.filter(b => b.result === 'Win').length;
     setWinCount(newWins);
 
-    // Reset form
     setPlayer('');
     setProp('');
   };
@@ -78,7 +76,6 @@ export default function PlayerPropsValueTool() {
           <p className="text-zinc-400 mt-2">Private • Personal Use Only</p>
         </div>
 
-        {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-zinc-900 rounded-3xl p-6 border border-zinc-800">
             <div className="text-emerald-400 text-sm">TOTAL PROFIT</div>
@@ -94,7 +91,6 @@ export default function PlayerPropsValueTool() {
           </div>
         </div>
 
-        {/* Log Form */}
         <div className="bg-zinc-900 rounded-3xl p-6 border border-zinc-800 mb-8">
           <h2 className="text-xl font-semibold mb-5">Log New Bet</h2>
 
@@ -162,7 +158,6 @@ export default function PlayerPropsValueTool() {
           </button>
         </div>
 
-        {/* History */}
         <div>
           <h2 className="text-xl font-semibold mb-4">Bet History</h2>
           {bets.length === 0 ? (
